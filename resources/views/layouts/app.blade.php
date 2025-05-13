@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('images/favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/Konserin-Logo.png') }}">
     
     @yield('styles')
 </head>
