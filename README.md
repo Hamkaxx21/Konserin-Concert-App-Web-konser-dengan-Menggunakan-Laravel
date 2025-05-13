@@ -87,16 +87,16 @@ Pastikan Anda telah menginstal perangkat lunak berikut di sistem Anda:
 
 ### Database Setup
 
-1. Create a new database for the project (e.g., `konserin`).
+1. Buat database dengan nama konserin_db (e.g., `konserin`).
 
-2. Update the `.env` file with your database credentials:
+2. Update file `.env` sesuai dengan nama database yang telah di setup:
    ```env
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
    DB_PORT=3306
-   DB_DATABASE=konserin
-   DB_USERNAME=your_username
-   DB_PASSWORD=your_password
+   DB_DATABASE=konserin_db
+   DB_USERNAME=root
+   DB_PASSWORD=
    ```
 
 3. Run the database migrations:
