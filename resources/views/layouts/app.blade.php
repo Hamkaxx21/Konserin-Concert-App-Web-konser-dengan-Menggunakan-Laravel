@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,11 +14,14 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('images/Konserin-Logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
     
     @yield('styles')
 </head>
-<body>
+<!-- Bootstrap 5 Bundle JS (dengan Popper.js) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<body class="d-flex flex-column min-vh-100">
     <header class="header">
         <div class="container">
             <nav class="main-nav">
@@ -68,12 +73,12 @@
         </div>
     </header>
 
-    <main>
+    <main class="flex-grow-1">
         @yield('content')
     </main>
 
     @if (!request()->routeIs('login') && !request()->routeIs('register'))
-    <footer class="footer">
+    <footer class="footer mt-auto">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
@@ -133,6 +138,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    @yield('scripts')
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     @yield('scripts')
 </body>
 </html>
