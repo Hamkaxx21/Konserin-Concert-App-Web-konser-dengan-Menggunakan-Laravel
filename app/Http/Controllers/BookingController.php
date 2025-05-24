@@ -101,7 +101,7 @@ class BookingController extends Controller
         session()->put('cart', $cart);
         
         // Redirect to checkout page after adding to cart
-        return redirect()->route('checkout')->with('success', 'Tickets added to cart successfully! Please proceed to payment.');
+        return redirect()->route('checkout')->with('info', 'Tickets have been added to your cart. Please complete the checkout to confirm your booking.');
     }
 
     /**
@@ -256,15 +256,19 @@ class BookingController extends Controller
     /**
      * Display the user's bookings.
      */
-    public function index()
-    {
-        $bookings = Booking::where('user_id', auth()->id())
-                           ->with('event')
-                           ->orderBy('created_at', 'desc')
-                           ->paginate(10);
-        
-        return view('bookings.index', compact('bookings'));
+public function index(Request $request)
+{
+    $query = Booking::where('user_id', auth()->id())->with('event')->latest();
+
+    // Filter berdasarkan status jika dikirim di query string
+    if ($request->has('status') && in_array($request->status, ['confirmed', 'cancelled'])) {
+        $query->where('status', $request->status);
     }
+
+    $bookings = $query->paginate(10);
+
+    return view('bookings.index', compact('bookings'));
+}
 
     /**
      * Display the booking details.

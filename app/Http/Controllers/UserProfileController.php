@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserProfileController extends Controller
 {
@@ -23,13 +24,27 @@ class UserProfileController extends Controller
     {
         $user = Auth::user();
 
+        // Validasi input
         $validated = $request->validate([
-            'name' => 'required|string|max:255',
+            'display_name' => 'required|string|max:255',
+            'real_name' => 'required|string|max:255',
+            'phone' => 'required|string|max:20',
             'email' => 'required|email|max:255|unique:users,email,' . $user->id,
-            // Add other fields as needed
+            'password' => 'nullable|string|min:8|confirmed', // password confirmation otomatis validasi
         ]);
 
-        $user->update($validated);
+        // Update data user
+        $user->display_name = $validated['display_name'];
+        $user->real_name = $validated['real_name'];
+        $user->phone = $validated['phone'];
+        $user->email = $validated['email'];
+
+        // Jika password diisi, update password
+        if (!empty($validated['password'])) {
+            $user->password = Hash::make($validated['password']);
+        }
+
+        $user->save();
 
         return redirect()->route('profile')->with('success', 'Profile updated successfully.');
     }

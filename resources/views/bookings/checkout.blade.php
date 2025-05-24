@@ -310,6 +310,15 @@
         .checkout-summary {
             margin-top: var(--spacing-lg);
         }
+
+        .payment-method.active {
+        border-color: var(--primary-color);
+        background-color: var(--bg-light);
+        }
+
+        .payment-method.active .payment-method-name {
+            color: var(--primary-color);
+        }
     }
 </style>
 @endsection
@@ -319,21 +328,16 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const paymentMethods = document.querySelectorAll('.payment-method');
-        
+
         paymentMethods.forEach(method => {
             const radio = method.querySelector('input[type="radio"]');
-            
-            method.addEventListener('click', function() {
+
+            method.addEventListener('click', function () {
                 radio.checked = true;
-                
-                // Remove active class from all methods
                 paymentMethods.forEach(m => m.classList.remove('active'));
-                
-                // Add active class to the clicked method
                 method.classList.add('active');
             });
-            
-            // Initialize active class based on checked radio
+
             if (radio.checked) {
                 method.classList.add('active');
             }
@@ -342,11 +346,36 @@
         @if(session('success'))
             Swal.fire({
                 icon: 'success',
-                title: 'Payment Successful',
+                title: 'Berhasil!',
                 text: '{{ session('success') }}',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#28a745',
+                scrollbarPadding: false
+            });
+        @endif
+
+        @if(session('info'))
+            Swal.fire({
+                icon: 'info',
+                title: 'Booking in Progress',
+                text: '{{ session('info') }}',
+                confirmButtonColor: '#6c5ce7',
+                scrollbarPadding: false
+            });
+        @endif
+
+        @if(session('error'))
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops!',
+                text: '{{ session('error') }}',
+                confirmButtonText: 'OK',
+                scrollbarPadding: false
             });
         @endif
     });
 </script>
 @endsection
+
+
+

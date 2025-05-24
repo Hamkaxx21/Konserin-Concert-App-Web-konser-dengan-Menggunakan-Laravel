@@ -9,3 +9,24 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* === Prevent overscroll past header/footer === */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+}
+
+body {
+    @apply flex flex-col;
+}
+
+main {
+    @apply flex-grow;
+}
+
+footer {
+    @apply shrink-0;
+}
