@@ -13,6 +13,7 @@
             <form method="POST" action="{{ route('register') }}" class="auth-form">
                 @csrf
                 
+                <!-- Name -->
                 <div class="form-group">
                     <input type="text" name="name" class="form-control" placeholder="Enter your name" value="{{ old('name') }}" required autofocus>
                     @error('name')
@@ -20,6 +21,7 @@
                     @enderror
                 </div>
 
+                <!-- Email -->
                 <div class="form-group">
                     <input type="email" name="email" class="form-control" placeholder="Type your e-mail or phone number" value="{{ old('email') }}" required>
                     @error('email')
@@ -27,6 +29,7 @@
                     @enderror
                 </div>
 
+                <!-- Password -->
                 <div class="form-group">
                     <input type="password" name="password" class="form-control" placeholder="Type your password" required>
                     <div class="password-hint">Must be 8 characters at least</div>
@@ -35,6 +38,15 @@
                     @enderror
                 </div>
 
+                <!-- Confirm Password -->
+                <div class="form-group">
+                    <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm your password" required>
+                    @error('password_confirmation')
+                        <span class="form-error">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <!-- Terms Agreement -->
                 <div class="form-group">
                     <div class="form-check">
                         <input type="checkbox" name="terms" id="terms" class="form-check-input" required>
@@ -44,24 +56,28 @@
                     </div>
                 </div>
 
+                <!-- Submit -->
                 <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
 
+                <!-- Divider -->
                 <div class="auth-divider">
                     <span>or do it via other accounts</span>
                 </div>
 
+                <!-- Social Login -->
                 <div class="social-login">
                     <a href="#" class="social-btn google">
-                        <img src="{{ asset('images/google.svg') }}" alt="Google">
+                        <img src="{{ asset('images/google-logo.png') }}" alt="Google">
                     </a>
                     <a href="#" class="social-btn apple">
-                        <img src="{{ asset('images/apple.svg') }}" alt="Apple">
+                        <img src="{{ asset('images/apple-logo.png') }}" alt="Apple">
                     </a>
                     <a href="#" class="social-btn facebook">
-                        <img src="{{ asset('images/facebook.svg') }}" alt="Facebook">
+                        <img src="{{ asset('images/facebook-logo.png') }}" alt="Facebook">
                     </a>
                 </div>
 
+                <!-- Redirect to login -->
                 <p class="auth-footer">
                     Already have an account? <a href="{{ route('login') }}">Sign In</a>
                 </p>
