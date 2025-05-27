@@ -48,22 +48,22 @@
             <h2 class="section-title">Tim Kami</h2>
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" alt="Muhammad Hamka Shiddiq" class="team-photo">
+                    <img src="{{ asset('images/hamka.jpg') }}" alt="Muhammad Hamka Shiddiq" class="team-photo">
                     <h3>Muhammad Hamka Shiddiq</h3>
                     <p>Project Manager</p>
                 </div>
                 <div class="team-member">
-                    <img src="https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg" alt="Arilano Exceloveli Pinem" class="team-photo">
+                    <img src="{{ asset('images/excell.jpg') }}" alt="Arilano Exceloveli Pinem" class="team-photo">
                     <h3>Arilano Exceloveli Pinem</h3>
                     <p>Front-End</p>
                 </div>
                 <div class="team-member">
-                    <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg" alt="Bima Arjuna" class="team-photo">
+                    <img src="{{ asset('images/bima.jpg') }}" alt="Bima Arjuna" class="team-photo">
                     <h3>Bima Arjuna</h3>
                     <p>Creative Director</p>
                 </div>
                 <div class="team-member">
-                    <img src="https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg" alt="Kezia Gabriella Saroinsong" class="team-photo">
+                    <img src="{{ asset('images/kezia.jpg') }}" alt="Kezia Gabriella Saroinsong" class="team-photo">
                     <h3>Kezia Gabriella Saroinsong</h3>
                     <p>Marketing</p>
                 </div>
