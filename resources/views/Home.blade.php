@@ -125,25 +125,25 @@
             
             <div class="features">
                 <div class="feature">
-                    <img src="{{ asset('images/icon-booking.svg') }}" alt="Easy Booking" class="feature-icon">
+                    <img src="{{ asset('images/easy_booking.png') }}" alt="Easy Booking" class="feature-icon">
                     <h3 class="feature-title">Pemesanan Sederhana</h3>
                     <p class="feature-description">Proses pemesanan tiket yang mudah dan cepat untuk pengalaman terbaik.</p>
                 </div>
                 
                 <div class="feature">
-                    <img src="{{ asset('images/icon-quality.svg') }}" alt="Best Quality" class="feature-icon">
+                    <img src="{{ asset('images/best_quality.png') }}" alt="Best Quality" class="feature-icon">
                     <h3 class="feature-title">Kualitas Terbaik</h3>
                     <p class="feature-description">Konser dengan kualitas produksi terbaik dan pengalaman premium.</p>
                 </div>
                 
                 <div class="feature">
-                    <img src="{{ asset('images/icon-ticket.svg') }}" alt="Secure Tickets" class="feature-icon">
+                    <img src="{{ asset('images/secure.png') }}" alt="Secure Tickets" class="feature-icon">
                     <h3 class="feature-title">Pilihan Tiket Flexibel</h3>
                     <p class="feature-description">Berbagai pilihan tiket untuk memastikan semua orang dapat menikmati.</p>
                 </div>
                 
                 <div class="feature">
-                    <img src="{{ asset('images/icon-support.svg') }}" alt="24/7 Support" class="feature-icon">
+                    <img src="{{ asset('images/24_support.png') }}" alt="24/7 Support" class="feature-icon">
                     <h3 class="feature-title">Akses Mudah</h3>
                     <p class="feature-description">Informasi lengkap tentang transportasi dan akses ke lokasi konser.</p>
                 </div>
