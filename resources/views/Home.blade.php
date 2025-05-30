@@ -55,6 +55,7 @@
                 @foreach($featuredEvents as $event)
                 <div class="event-card" style="padding: 20px;">
                     <div style="position: relative; min-height: 0;">
+                        <img src="{{ asset('images/concert.jpg') }}" alt="{{ $event->title }}" class="event-image" style="width: 100%; height: auto; object-fit: cover;">
                         <div class="event-date" style="top: 10px; left: 10px; position: absolute;">
                             <span>{{ $event->day }}</span>
                             <span>{{ $event->month }}</span>
